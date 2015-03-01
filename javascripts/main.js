@@ -21,8 +21,8 @@ $(document).ready(function() {
 		}, 500);   
 	})
 
-  //繪製氣球
-  var canvas = $('canvas')[0];
+ 	//繪製氣球
+ 	var canvas = $('canvas')[0];
 
     canvas.width = 100;
     canvas.height = 200;
@@ -51,7 +51,15 @@ $(document).ready(function() {
 
     })
 
-
+    //照片點擊放大
+    $(".photo img,.img-area img").mouseenter(function(){
+    	var zoomInImg = $(this);
+    	console.log(zoomInImg)
+    	zoomInImg.addClass("img-zoomin");
+    	setTimeout(function(){
+    		zoomInImg.removeClass("img-zoomin");
+    	},3000)
+    })
 });
 
 //亂數產生氣球位置
