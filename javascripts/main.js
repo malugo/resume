@@ -53,6 +53,8 @@ $(document).ready(function() {
 
 
 });
+
+//亂數產生氣球位置
 function canvasMove (){
 	var newLocationRight = Math.floor(Math.random() * (150 - 30 + 1)) + 30;
 	var newLocationBottom = Math.floor(Math.random() * (350 - 100 + 1)) + 100;
