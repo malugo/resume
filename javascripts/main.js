@@ -1,19 +1,25 @@
 $(document).ready(function() {
   
-  //開啟menu
-  $(".inner.right").mouseenter(function(){
-  	$(this).find("ul").show("slow")
-  }).mouseleave(function(){
-  	$(this).find("ul").hide("slow")
-  });
+  	//氣球亂跑
+  	$(".canvas").mouseenter(function(){
+		canvasMove();
+  	})
+	
+  	//開啟menu
+	$(".inner.right").mouseenter(function(){
+		$(this).find("ul").show("slow")
+	}).mouseleave(function(){
+		$(this).find("ul").hide("slow")
+	});
 
-  //點擊menu移動
-  $(".inner.right li").click(function(){
-  	var goTo = $(this).attr("id");
-  	$('html, body').animate({
-       scrollTop: $("." + goTo).offset().top
-  	}, 500);   
-  })
+	//點擊menu移動
+	$(".inner.right li").click(function(){
+		var goTo = $(this).attr("id");
+	
+		$('html, body').animate({
+		   scrollTop: $("." + goTo).offset().top
+		}, 500);   
+	})
 
   //繪製氣球
   var canvas = $('canvas')[0];
@@ -47,3 +53,11 @@ $(document).ready(function() {
 
 
 });
+function canvasMove (){
+	var newLocationRight = Math.floor(Math.random() * (150 - 30 + 1)) + 30;
+	var newLocationBottom = Math.floor(Math.random() * (350 - 100 + 1)) + 100;
+	$( ".canvas" ).animate({
+	    right: newLocationRight + "px",
+	    bottom:  newLocationBottom + "px"
+	  }, 1000);
+}
