@@ -52,13 +52,13 @@ $(document).ready(function() {
     })
 
     //照片點擊放大
-    $(".photo img,.img-area img").mouseenter(function(){
+    $(".photo img,.img-area img").click(function(){
     	var zoomInImg = $(this);
     	console.log(zoomInImg)
-    	zoomInImg.addClass("img-zoomin");
-    	setTimeout(function(){
-    		zoomInImg.removeClass("img-zoomin");
-    	},3000)
+    	zoomInImg.toggleClass("img-zoomin");
+    	//setTimeout(function(){
+    	//	zoomInImg.removeClass("img-zoomin");
+    	//},3000)
     })
 });
 
